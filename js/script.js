@@ -46,16 +46,22 @@ window.onload = function () {
 }
 
 // 메인페이지 자기소개 타이핑
-// const content = "Hello. I'm Haneul,\n Front-end developer.\n Welcome to the\n my portfolio site:-)           ";
-// const text = document.querySelector(".text");
-// let i = 0;
+const content = "Hello!! I'm Haneul,\n Front-end developer.\n Welcome to the \n my portfolio site :-)\n hover your mouse!           ";
+const fText = document.querySelector(".frontText");
+let i = 0;
 
-// function typing(){
-//     let txt = content[i++];
-//     text.innerHTML += txt=== "\n" ? "<br/>": txt;
-//     if (i > content.length) {
-//         text.textContent = "";
-//         i = 0;
-//     }
-// }
-// setInterval(typing, 100);
+function typing(){
+    let txt = content[i++];
+    fText.innerHTML += txt=== "\n" ? "<br/>": txt;
+    if (i > content.length) {
+        fText.textContent = "";
+        i = 0;
+    }
+}
+setInterval(typing, 100);
+
+// 테마 색상 변경
+function darkMode() {
+	let body = document.body;
+	body.classList.toggle("dark_mode");
+}

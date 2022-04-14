@@ -1,10 +1,11 @@
 :root {
     /* 컬러 */
-    --white-color: #fff;
+    --white-color: rgba(255, 255, 255, 0.858);
     --black-color: #140a00;
     --deep-navy-color: #0c1e34;
     --navy-color: #033c59;
     --light-navy-color: #005479;
+    --default-blue-color: #598ba1;
     --deep-yellow-color: #f4a201;
     --yellow-color: #ffba41;
     --light-yellow-color: #ffd35c;
@@ -20,13 +21,13 @@
     --large-margin: 30px;
 
     /* 폰트사이즈 */
+    --super-large-font: 30px;
     --large-font: 25px;
     --medium-font: 20px;
     --small-font: 15px;
 }
 
 * {
-    color: var(--black-color);
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -38,13 +39,12 @@ html,body {
     display: block;
     width: 100%;
     height: 100%;
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
 }
-section {
-    width: 100%;
-    height: 100vh;
-    padding: var(--default-padding);
+.dark_mode {
+    background-color: var(--deep-navy-color);
+    color: var(--white-color);
 }
 
 /* 헤더 영역 */
@@ -57,49 +57,93 @@ header {
     height: 100px;
     align-items: center;
     position: fixed;
-    background-color: var(--white-color);
+    outline: 4px solid var(--light-navy-color);
 }
 header:hover {
-    outline: 4px solid var(--deep-navy-color);
+    outline: 4px solid var(--yellow-color);
 }
+
+/* 타이틀 버튼 */
 header .logo {
-    font-size: var(--large-font);
     font-weight: bold;
 }
-header .logo i:hover {
-    color: var(--deep-yellow-color);
+header .logo:hover {
+    transform: rotate(8deg);
+}
+header .logo span a {
+    color: var(--default-blue-color);
+    font-size: var(--super-large-font);
+    margin-left: var(--small-margin);
 }
 header .logo span a:hover {
     color: var(--deep-yellow-color);
 }
 
+/* 메뉴 버튼 */
 header ul li {
     float: left;
     font-size: var(--medium-font);
     margin-right: var(--medium-margin);
     font-weight: bold;
 }
+header ul li a {
+    color: var(--default-blue-color);
+}
 header ul li a:hover {
     color: var(--deep-yellow-color);
 }
-
-/* 메인페이지 영역 */
-.mainPage {
-    display: flex;
+header ul li a div:hover {
+    transform: rotate(8deg);
+}
+header ul li i {
+    color: var(--default-blue-color);
+}
+header ul li i:hover {
+    color: var(--light-yellow-color);
 }
 
+/* 메인페이지 영역 */
+.section {
+    width: 100%;
+    height: 100vh;
+    padding: var(--default-padding);
+}
+.mainPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-
-.text_box {
+/* 회전하는 메인글 */
+.welcomeTitle {
+    width: 450px;
+    height: 300px;
+    perspective: 500px;
+}
+.welcomeTitle .title {
+    width: 450px;
+    height: 200px;
+    backface-visibility: hidden;
+    transition: 1s;
+}
+.welcomeTitle .title.front {
     display: flex;
     justify-content: left;
     align-items: flex-start;
     height: 100px;
-    font-size: 2rem;
+    position: absolute;
+    transform: rotateY(0deg);
 }
-img {
-    width: 500px;
-    height: 500px;
-    margin-left: 200px;
+.welcomeTitle .title.front .frontText {
+    font-size: 40px;
+}
+.welcomeTitle:hover .title.front {
+    transform: rotateY(180deg);
+}
+.welcomeTitle .title.back {
+    transform: rotateY(-180deg);
+}
+.welcomeTitle:hover .title.back {
+    transform: rotateY(0deg);
 }
 
