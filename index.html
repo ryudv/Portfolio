@@ -8,35 +8,48 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/e133d6c60e.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- 헤더 영역 -->
     <header>
-        <!-- 타이틀 버튼-->
-        <div class="logo">
-            <span><a href="#section1">RYU SKY</a></span>
-        </div>
-        <!-- 메뉴 버튼 -->
-        <div class="menu">
-            <ul>
-                <li><a href="#section2"><div>PROJECT</div></a></li>
-                <li><a href="#section3"><div>PROFILE</div></a></li>
-                <li><a href="#section4"><div>CONTACT</div></a></li>
-                <li onclick="darkMode()"><i class="fas fa-lightbulb"></i></li>
-            </ul>
-        </div>
+        <!-- 상단 네이게이션바 -->
+        <nav class="nav01">
+            <a href="#section1"><h1>❤ RYU HANEUL PORTPOLIO ❤</h1></a>
+        </nav>
+        <!-- 하단 네비게이션바 -->
+        <nav class="nav02">
+            <div class="logo">
+                <a href="#section1"><i class="fas fa-home"></i></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#section2"><div>PROJECT</div></a></li>
+                    <li><a href="#section3"><div>PROFILE</div></a></li>
+                    <li><a href="#section4"><div>CONTACT</div></a></li>
+                    <li onclick="darkMode()"><i class="fas fa-lightbulb"></i></li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
     <!-- 메인페이지 영역 -->
     <section class="section mainPage" id="section1">
+        <!-- sns 버튼 -->
+        <aside class="snsIcon">
+            <ul>
+                <li><a href="https://www.instagram.com/ryu.skky/" title="instagram"><i class="fab fa-instagram-square"></i></a></li>
+                <li><a href="https://github.com/ryudv" title="gitHub"><i class="fab fa-github-square"></i></a></li>
+                <li><a href="https://blog.naver.com/ryu_dv" title="naverBlog"><i class="fab fa-blogger"></i></a></li>
+            </ul>
+        </aside>
         <!-- 회전하는 메인글 -->
+
         <div class="welcomeTitle">
             <div class="title front" data-trigger>
                 <span class="frontText"></span>
             </div>
             <div class="title back">
-                <h4>도전을 두려워하지 않는 개발자 유하늘입니다.</h4>
+                <h2>도전을 두려워하지 않는 개발자 유하늘입니다.</h2>
                 
             </div>
         </div>
@@ -56,7 +69,13 @@
 
     <!-- 연락처 영역 -->
     <section class="section contact" id="section4">
-        <h1>연락처</h1>
+        <div class="contactContens">
+            <p>PHONE: 010-2638-7212</p>
+            <p>EMAIL: ryu_dv@naver.com</p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
     </section>
 
     <!-- 푸터 영역 -->
