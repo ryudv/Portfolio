@@ -1,59 +1,135 @@
+:root {
+    /* 컬러 */
+    --deep-blue-color: #03318c;
+    --middle-blue-color: #16498c;
+    --right-blue-color: #11538c;
+
+    --deep-yellow-color: #bfb856;
+    --middle-yellow-color: #f2e527;
+}
+
 * {
     list-style: none;
-    color: black;
+    color: white;
     text-decoration: none;
     padding: 0;
     margin: 0;
 }
+
 /* 폰트 */
 @font-face {
-    font-family: 'DungGeunMo';
-    src: url(/fonts/DungGeunMo.woff) format('woff');
+    font-family: 'THEBOLDFONT';
+    src: url(/fonts/Mont-HeavyDEMO.otf) format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    background-color: skyblue;
-    font-family: 'DungGeunMo';
+    font-family: 'THEBOLDFONT';
+}
+
+/* 메인 01 */
+#main01 {
+    background-color: var(--deep-blue-color);
+    width: 100%;
+    height: 100vh;
 }
 
 /* 헤더 */
 .header {
-    height: 130px;
-    background-color:rgba(253, 252, 252, 0.3);
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-right: 50px;
+    padding-right: 100px;
     padding-left: 50px;
 }
 .header .logo h1 {
-    font-size: 50px;
-    color: white;
-    border: 3px solid white;
-    border-radius: 30px;
-    padding: 10px;
+    font-size: 35px;
+    position: fixed;
+    top: 30px;
+    left: 50px;
 }
 .header .logo h1:hover {
-    text-shadow: 2px 2px 2px rgb(183, 182, 182);
-    background-color: plum;
+    color: var(--middle-yellow-color);
+    transition: 0.5s ease-out;
+}
+.header .logo h1:not(:hover) {
+    transition: 0.5s ease-out;
 }
 .header .icon ul {
     display: flex;
 }
 .header .icon ul li {
     margin-left: 50px;
-    font-size: 40px;
 }
-.header .icon ul li i {
-    color: white;
+.header .icon ul li:hover {
+    transform: rotate(10deg);
 }
-.header .icon ul li i:hover {
-    text-shadow: 2px 2px 2px rgb(183, 182, 182);
-    color: plum;
+.header .icon ul li span {
+    font-size: 20px;
+}
+.header .icon ul li span:hover {
+    color: var(--middle-yellow-color);
+    transition: 0.5s ease-out;
+}
+.header .icon ul li span:not(:hover) {
+    transition: 0.5s ease-out;
 }
 
-/* 메인페이지 */
+/* 흐르는 텍스트 영역 */
+.flow-container {
+    background-color: var(--middle-yellow-color);
+}
+.flow-text {
+    display: flex;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: 1s;
+    font-size: 30px;
+    
+}
+.flow-text:hover .flow-wrap {
+    animation-play-state: paused;
+    color: white;
+}
+.flow-wrap {
+    animation: textLoop 10s linear infinite;
+    margin-right: 20px;
+    color: var(--deep-blue-color);
+}
+@keyframes textLoop {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+/* 메인 02 */
+#main02 {
+    background-color: var(--middle-blue-color);
+    width: 100%;
+    height: 100vh;
+}
+
+
+/* 메인 03 */
+#main03 {
+    background-color: var(--deep-blue-color);
+    width: 100%;
+    height: 100vh;
+}
+
+/* 메인 04 */
+#main04 {
+    background-color: var(--middle-blue-color);
+    width: 100%;
+    height: 100vh;
+}
 
 
