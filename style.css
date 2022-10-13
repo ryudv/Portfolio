@@ -2,10 +2,11 @@
     /* 컬러 */
     --deep-blue-color: #03318c;
     --middle-blue-color: #16498c;
-    --right-blue-color: #11538c;
+    --light-blue-color: #11538c;
 
     --deep-yellow-color: #bfb856;
     --middle-yellow-color: #f2e527;
+    --light-yellow-color: #fffccd;
 }
 
 * {
@@ -14,6 +15,7 @@
     text-decoration: none;
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 /* 폰트 */
@@ -28,8 +30,8 @@ body {
     font-family: 'THEBOLDFONT';
 }
 
-/* 메인 01 */
-#main01 {
+/* 컨테이너 01 */
+#container01 {
     background-color: var(--deep-blue-color);
     width: 100%;
     height: 100vh;
@@ -77,6 +79,28 @@ body {
     transition: 0.5s ease-out;
 }
 
+.main {
+    width: 100%;
+}
+.mainImg {
+    text-align: center;
+    margin-top: 50px;
+}
+.main .mainImg img {
+    width: 500px;
+}
+.main .mainImg .arrowImg i{
+    font-size: 30px;
+    margin-top: 5px;
+    animation: arrow-animation 1s linear infinite;
+}
+@keyframes arrow-animation {
+    0% { margin-top: 5px; }
+    50% { margin-top: 20px; }
+    100% { margin-top: 5px; }
+}
+
+
 /* 흐르는 텍스트 영역 */
 .flow-container {
     background-color: var(--middle-yellow-color);
@@ -110,26 +134,62 @@ body {
     }
 }
 
-/* 메인 02 */
-#main02 {
+/* 컨테이너 02 */
+#container02 {
     background-color: var(--middle-blue-color);
     width: 100%;
-    height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+}
+.project01Video {
+    width: 50%;
+}
+/* .project01Video video{
+    width: 50%;
+} */
+.project01Video img{
+    width: 100%;
+}
+.project01Note {
+    width: 50%;
+    padding: 50px;
+}
+.project01Note .moveBtn {
+    color: var(--deep-blue-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+.project01Note .moveBtn:hover {
+    background-color: var(--middle-yellow-color);
+    transition: 0.3s ease-out;
+    color: white;
+}
+.project01Note .moveBtn:not(:hover) {
+    transition: 0.3s ease-out;
 }
 
 
-/* 메인 03 */
-#main03 {
+
+/* 컨테이너 03 */
+#container03 {
     background-color: var(--deep-blue-color);
     width: 100%;
     height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
-/* 메인 04 */
-#main04 {
+/* 컨테이너 04 */
+#container04 {
     background-color: var(--middle-blue-color);
     width: 100%;
     height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 
