@@ -1,8 +1,12 @@
 :root {
     /* 컬러 */
-    --deep-blue-color: #03318c;
-    --middle-blue-color: #16498c;
-    --light-blue-color: #11538c;
+    /* --deep-blue-color: #03318c; */
+    
+    /* --middle-blue-color: #16498c;
+    --light-blue-color: #11538c; */
+    --deep-blue-color: #bfbfbf;
+    --middle-blue-color: #bfbfbf
+    --light-blue-color: #bfbfbf
 
     --deep-yellow-color: #bfb856;
     --middle-yellow-color: #f2e527;
@@ -16,6 +20,7 @@
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 /* 폰트 */
@@ -79,6 +84,7 @@ body {
     transition: 0.5s ease-out;
 }
 
+/* 메인화면 */
 .main {
     width: 100%;
 }
@@ -87,17 +93,13 @@ body {
     margin-top: 50px;
 }
 .main .mainImg img {
-    width: 500px;
+    width: 600px;
 }
-.main .mainImg .arrowImg i{
-    font-size: 30px;
-    margin-top: 5px;
-    animation: arrow-animation 1s linear infinite;
-}
-@keyframes arrow-animation {
-    0% { margin-top: 5px; }
-    50% { margin-top: 20px; }
-    100% { margin-top: 5px; }
+.main .window1 img{
+    width: 200px;
+    position: absolute;
+    top: 100px;
+    left: 200px;
 }
 
 
