@@ -1,26 +1,24 @@
 :root {
-    /* 컬러 */
-    /* --deep-blue-color: #03318c; */
-    
-    /* --middle-blue-color: #16498c;
-    --light-blue-color: #11538c; */
-    --deep-blue-color: #bfbfbf;
-    --middle-blue-color: #bfbfbf
-    --light-blue-color: #bfbfbf
-
-    --deep-yellow-color: #bfb856;
-    --middle-yellow-color: #f2e527;
-    --light-yellow-color: #fffccd;
+    /* color */
+    --white-color: #fffafa;
+    --gray-color: #d3d3d3;
+    --deep-gray-color: #c0c0c0;
+    --navy-color: #191970;
+    --yellow-color: #f0e68c;
+    --deep-yellow-color: #ffd700;
+    --black-color: #000000;
 }
 
 * {
     list-style: none;
-    color: white;
     text-decoration: none;
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
     box-sizing: border-box;
+}
+a {
+    color: var(--white-color);
 }
 
 /* 폰트 */
@@ -33,79 +31,186 @@
 
 body {
     font-family: 'THEBOLDFONT';
+    color: white;
 }
 
 /* 컨테이너 01 */
 #container01 {
-    background-color: var(--deep-blue-color);
+    background-color: var(--gray-color);
     width: 100%;
     height: 100vh;
 }
 
 /* 헤더 */
 .header {
-    height: 100px;
+    height: 15vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-right: 100px;
+    padding-right: 80px;
     padding-left: 50px;
 }
-.header .logo h1 {
-    font-size: 35px;
+/* 헤더 - 타이틀 */
+.header .title h1 {
+    font-size: 38px;
     position: fixed;
     top: 30px;
     left: 50px;
+    text-shadow: 3px 3px 3px var(--deep-gray-color);
 }
-.header .logo h1:hover {
-    color: var(--middle-yellow-color);
+.header .title h1:hover {
+    color: var(--deep-yellow-color);
     transition: 0.5s ease-out;
 }
-.header .logo h1:not(:hover) {
+.header .title h1:not(:hover) {
     transition: 0.5s ease-out;
 }
-.header .icon ul {
+/* 헤더 - 메뉴버튼 */
+.header .menuBtn ul {
     display: flex;
 }
-.header .icon ul li {
-    margin-left: 50px;
+.header .menuBtn ul li {
+    margin-left: 40px;
 }
-.header .icon ul li:hover {
+.header .menuBtn ul li:hover {
     transform: rotate(10deg);
 }
-.header .icon ul li span {
-    font-size: 20px;
+.header .menuBtn ul li span {
+    font-size: 25px;
+    text-shadow: 2px 2px 2px var(--deep-gray-color);
 }
-.header .icon ul li span:hover {
-    color: var(--middle-yellow-color);
+.header .menuBtn ul li span:hover {
+    color: var(--deep-yellow-color);
     transition: 0.5s ease-out;
 }
-.header .icon ul li span:not(:hover) {
+.header .menuBtn ul li span:not(:hover) {
     transition: 0.5s ease-out;
 }
 
 /* 메인화면 */
 .main {
     width: 100%;
+    height: 85vh;
+    position: relative;
 }
-.mainImg {
-    text-align: center;
-    margin-top: 50px;
+/* 메인화면 - 일러스트 */
+.main .mainImg {
+    position: absolute;
+    bottom: 10%;
+    left: 30%;
+    z-index: 1000;
 }
 .main .mainImg img {
     width: 600px;
 }
-.main .window1 img{
-    width: 200px;
+.main .window {
+    padding: 30px 20px;
     position: absolute;
-    top: 100px;
-    left: 200px;
+}
+.main .window1 {
+    background: url(/images/window1.png);
+    background-repeat: no-repeat;
+    background-size: 200px;
+    width: 200px;
+    height: 300px;
+    top: 10%;
+    left: 23%;
+    z-index: 2;
+}
+.main .window:hover {
+    transform: scale3d(1.07, 1.07, 1.07);
+}
+.main .window2 {
+    background: url(/images/window2.png);
+    background-repeat: no-repeat;
+    background-size: 300px;
+    width: 300px;
+    height: 300px;
+    top: 2%;
+    left: 40%;
+    z-index: 3;
+}
+.main .window3 {
+    background: url(/images/window3.png);
+    background-repeat: no-repeat;
+    background-size: 150px;
+    width: 150px;
+    height: 250px;
+    top: 20%;
+    left: 65%;
+    z-index: 1;
+}
+.main .window1 p, .window2 p, .window3 p {
+    color: var(--black-color);
+}
+/* 메인화면 - 텍스트 */
+.main .text {
+    position: absolute;
+    background-color: var(--navy-color);
+    padding-left: 5px;
+    padding-right: 10px;
+    /* border-radius: 5px; */
+}
+.main .text1 {
+    font-size: 30px;
+    top: 50%;
+    left: 20%;
+    animation: text-animation 1.5s infinite;
+}
+.main .text2 {
+    font-size: 35px;
+    top: 8%;
+    left: 65%;
+    animation: text-animation 2s infinite;
+}
+.main .text3 {
+    font-size: 20px;
+    top: 60%;
+    left: 60%;
+    animation: text-animation 1s infinite;
+}
+/* 메인화면 - 반짝이는 텍스트 */
+@keyframes text-animation {
+    0% {
+        color: var(--white-color);
+    }
+    50% {
+        color: var(--deep-yellow-color);
+    }
+    100% {
+        color: var(--white-color);
+    }
+}
+/* 메인화면 - up버튼 */
+.main .upBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+.main .upBtn button {
+    border-radius: 25px;
+    width: 50px;
+    height: 40px;
+    background-color: var(--white-color);
+    cursor: pointer;
+    outline: none;
+    box-shadow: 1px 4px 0 rgb(0,0,0,0.5);
+}
+.main .upBtn button i {
+    color: var(--black-color);
+}
+.main .upBtn button:active {
+    box-shadow: 1px 1px 0 rgb(0,0,0,0.5);
+    position: relative;
+    top: 2px;
+}
+.main .upBtn button:hover {
+    background-color: var(--deep-yellow-color);
 }
 
-
-/* 흐르는 텍스트 영역 */
+/* 메인화면 - 흐르는 텍스트 영역 */
 .flow-container {
-    background-color: var(--middle-yellow-color);
+    background-color: var(--deep-yellow-color);
 }
 .flow-text {
     display: flex;
@@ -114,11 +219,10 @@ body {
     overflow: hidden;
     transition: 1s;
     font-size: 30px;
-    
 }
 .flow-text:hover .flow-wrap {
     animation-play-state: paused;
-    color: white;
+    color: var(--navy-color);
 }
 .flow-wrap {
     animation: textLoop 10s linear infinite;
@@ -138,7 +242,7 @@ body {
 
 /* 컨테이너 02 */
 #container02 {
-    background-color: var(--middle-blue-color);
+    background-color: var(--gray-color);
     width: 100%;
     padding-top: 100px;
     padding-bottom: 100px;
@@ -158,7 +262,6 @@ body {
     padding: 50px;
 }
 .project01Note .moveBtn {
-    color: var(--deep-blue-color);
     border: none;
     padding: 10px 20px;
     font-size: 20px;
@@ -166,7 +269,7 @@ body {
     border-radius: 20px;
 }
 .project01Note .moveBtn:hover {
-    background-color: var(--middle-yellow-color);
+    background-color: var(--deep-yellow-color);
     transition: 0.3s ease-out;
     color: white;
 }
@@ -178,7 +281,7 @@ body {
 
 /* 컨테이너 03 */
 #container03 {
-    background-color: var(--deep-blue-color);
+    background-color: var(--gray-color);
     width: 100%;
     height: 100vh;
     padding-top: 100px;
@@ -187,7 +290,7 @@ body {
 
 /* 컨테이너 04 */
 #container04 {
-    background-color: var(--middle-blue-color);
+    background-color: var(--gray-color);
     width: 100%;
     height: 100vh;
     padding-top: 100px;
