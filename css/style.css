@@ -51,20 +51,25 @@ body {
     padding-left: 50px;
 }
 /* 헤더 - 타이틀 */
-.header .title h1 {
+.header .title {
+    display: flex;
+}
+.header .title .logoImg img {
+    width: 60px;
+    margin-right: 10px;
+}
+.header .title .logoText h1 {
     font-size: 38px;
-    position: fixed;
-    top: 30px;
-    left: 50px;
     text-shadow: 3px 3px 3px var(--deep-gray-color);
 }
-.header .title h1:hover {
+.header .title .logoText h1:hover {
     color: var(--deep-yellow-color);
     transition: 0.5s ease-out;
 }
-.header .title h1:not(:hover) {
+.header .title .logoText h1:not(:hover) {
     transition: 0.5s ease-out;
 }
+
 /* 헤더 - 메뉴버튼 */
 .header .menuBtn ul {
     display: flex;
