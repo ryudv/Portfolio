@@ -28,13 +28,20 @@ a {
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'twayair';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_tway@1.0/twayair.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+AC00-D7A3; /* 한글만 */
+}
 
 body {
-    font-family: 'THEBOLDFONT';
+    font-family: 'THEBOLDFONT', 'twayair' ;
     color: white;
 }
 
-/* 컨테이너 01 */
+/* 컨테이너01 : 시작페이지 */
 #container01 {
     background-color: var(--gray-color);
     width: 100%;
@@ -42,100 +49,113 @@ body {
 }
 
 /* 헤더 */
-.header {
-    height: 15vh;
+#container01 .header {
+    height: 13vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-right: 80px;
     padding-left: 50px;
+    border-bottom: 2px dotted var(--deep-gray-color);
 }
 /* 헤더 - 타이틀 */
-.header .title {
+#container01 .header .title {
     display: flex;
 }
-.header .title .logoImg img {
+#container01 .header .title .logoImg {
+    background: url(/images/mainLogo.png);
+    background-repeat: no-repeat;
+    background-size: 60px;
     width: 60px;
+    height: 60px;
     margin-right: 10px;
+    cursor: pointer;
 }
-.header .title .logoText h1 {
+#container01 .header .title .logoImg:active {
+    background: url(/images/mainLogo2.png);
+    background-repeat: no-repeat;
+    background-size: 60px;
+    width: 60px;
+    height: 60px;
+}
+#container01 .header .title .logoText h1 {
     font-size: 38px;
     text-shadow: 3px 3px 3px var(--deep-gray-color);
 }
-.header .title .logoText h1:hover {
+#container01 .header .title .logoText h1:hover {
     color: var(--deep-yellow-color);
     transition: 0.5s ease-out;
 }
-.header .title .logoText h1:not(:hover) {
+#container01 .header .title .logoText h1:not(:hover) {
     transition: 0.5s ease-out;
 }
 
 /* 헤더 - 메뉴버튼 */
-.header .menuBtn ul {
+#container01 .header .menuBtn ul {
     display: flex;
 }
-.header .menuBtn ul li {
+#container01 .header .menuBtn ul li {
     margin-left: 40px;
 }
-.header .menuBtn ul li:hover {
+#container01 .header .menuBtn ul li:hover {
     transform: rotate(10deg);
 }
-.header .menuBtn ul li span {
+#container01 .header .menuBtn ul li span {
     font-size: 25px;
     text-shadow: 2px 2px 2px var(--deep-gray-color);
 }
-.header .menuBtn ul li span:hover {
+#container01 .header .menuBtn ul li span:hover {
     color: var(--deep-yellow-color);
     transition: 0.5s ease-out;
 }
-.header .menuBtn ul li span:not(:hover) {
+#container01 .header .menuBtn ul li span:not(:hover) {
     transition: 0.5s ease-out;
 }
 
 /* 메인화면 */
-.main {
+#container01 .main {
     width: 100%;
     height: 85vh;
     position: relative;
 }
 /* 메인화면 - 일러스트 */
-.main .mainImg {
+#container01 .main .mainImg {
     position: absolute;
-    bottom: 10%;
+    bottom: 5%;
     left: 30%;
     z-index: 1000;
 }
-.main .mainImg img {
+#container01 .main .mainImg img {
     width: 600px;
 }
-.main .window {
+#container01 .main .window {
     padding: 30px 20px;
     position: absolute;
 }
-.main .window1 {
+#container01 .main .window:hover {
+    transform: scale3d(1.07, 1.07, 1.07);
+}
+#container01 .main .window1 {
     background: url(/images/window1.png);
     background-repeat: no-repeat;
     background-size: 200px;
     width: 200px;
     height: 300px;
-    top: 10%;
+    top: 12%;
     left: 23%;
     z-index: 2;
 }
-.main .window:hover {
-    transform: scale3d(1.07, 1.07, 1.07);
-}
-.main .window2 {
+#container01 .main .window2 {
     background: url(/images/window2.png);
     background-repeat: no-repeat;
     background-size: 300px;
     width: 300px;
     height: 300px;
-    top: 2%;
+    top: 6%;
     left: 40%;
     z-index: 3;
 }
-.main .window3 {
+#container01 .main .window3 {
     background: url(/images/window3.png);
     background-repeat: no-repeat;
     background-size: 150px;
@@ -145,30 +165,30 @@ body {
     left: 65%;
     z-index: 1;
 }
-.main .window1 p, .window2 p, .window3 p {
+#container01 .main .window1 p, .window2 p, .window3 p {
     color: var(--black-color);
 }
 /* 메인화면 - 텍스트 */
-.main .text {
+#container01 .main .text {
     position: absolute;
     background-color: var(--navy-color);
     padding-left: 5px;
     padding-right: 10px;
     /* border-radius: 5px; */
 }
-.main .text1 {
+#container01 .main .text1 {
     font-size: 30px;
     top: 50%;
     left: 20%;
     animation: text-animation 1.5s infinite;
 }
-.main .text2 {
+#container01 .main .text2 {
     font-size: 35px;
     top: 8%;
     left: 65%;
     animation: text-animation 2s infinite;
 }
-.main .text3 {
+#container01 .main .text3 {
     font-size: 20px;
     top: 60%;
     left: 60%;
@@ -187,12 +207,12 @@ body {
     }
 }
 /* 메인화면 - up버튼 */
-.main .upBtn {
+#container01 .main .upBtn {
     position: fixed;
     bottom: 20px;
     right: 20px;
 }
-.main .upBtn button {
+#container01 .main .upBtn button {
     border-radius: 25px;
     width: 50px;
     height: 40px;
@@ -201,15 +221,15 @@ body {
     outline: none;
     box-shadow: 1px 4px 0 rgb(0,0,0,0.5);
 }
-.main .upBtn button i {
+#container01 .main .upBtn button i {
     color: var(--black-color);
 }
-.main .upBtn button:active {
+#container01 .main .upBtn button:active {
     box-shadow: 1px 1px 0 rgb(0,0,0,0.5);
     position: relative;
     top: 2px;
 }
-.main .upBtn button:hover {
+#container01 .main .upBtn button:hover {
     background-color: var(--deep-yellow-color);
 }
 
@@ -228,6 +248,7 @@ body {
 .flow-text:hover .flow-wrap {
     animation-play-state: paused;
     color: var(--navy-color);
+    cursor: pointer;
 }
 .flow-wrap {
     animation: textLoop 10s linear infinite;
@@ -245,61 +266,110 @@ body {
     }
 }
 
-/* 컨테이너 02 */
+/* 컨테이너02 : 프로젝트 화면 */
 #container02 {
-    background-color: var(--gray-color);
+    background-color: var(--deep-gray-color);
     width: 100%;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    display: block;
+    text-shadow: 3px 3px 3px darkgrey;
+    padding-bottom: 20px;
+}
+/* 컨테이너02 : 프로젝트 화면 공통 레이아웃 */
+#container02 .project {
     display: flex;
 }
-.project01Video {
-    width: 50%;
+#container02 .projectTitle {
+    width: 100%;
+    height: 100px;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 50px;
 }
-/* .project01Video video{
+#container02 .projectTitle h2 {
+    font-size: 35px;
+    color: var(--navy-color);
+}
+#container02 .project .proScreen {
+    width: 50%;
+    height: 380px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+/* #container02 .project01 .project01Video video{
     width: 50%;
 } */
-.project01Video img{
-    width: 100%;
-}
-.project01Note {
+#container02 .project .proNote {
     width: 50%;
     padding: 50px;
 }
-.project01Note .moveBtn {
+#container02 .project .proNote .moveBtn {
     border: none;
     padding: 10px 20px;
     font-size: 20px;
     font-weight: bold;
     border-radius: 20px;
 }
-.project01Note .moveBtn:hover {
+#container02 .project .proNote .moveBtn:hover {
     background-color: var(--deep-yellow-color);
     transition: 0.3s ease-out;
     color: white;
 }
-.project01Note .moveBtn:not(:hover) {
+#container02 .project .proNote .moveBtn:not(:hover) {
     transition: 0.3s ease-out;
 }
 
+/* 프로젝트01 */
+#container02 .project01 .pro01Screen {
+    background-image: url(/images/project01.png);
+}
 
+/* 프로젝트02 */
+#container02 .project02 .pro02Screen {
+    background-image: url(/images/project02.png);
+}
+#container02 .project02 .pro02Note {
+    text-align: end;
+}
 
-/* 컨테이너 03 */
+/* 프로젝트03 */
+#container02 .project03 .pro03Screen {
+    background-image: url(/images/project03.png);
+}
+
+/* 컨테이너03 : 자기소개 */
 #container03 {
     background-color: var(--gray-color);
     width: 100%;
     height: 100vh;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    text-shadow: 3px 3px 3px var(--deep-gray-color);
+}
+#container03 .introTitle {
+    width: 100%;
+    height: 100px;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 50px;
+}
+#container03 .introTitle h2 {
+    font-size: 35px;
+    color: var(--navy-color);
 }
 
-/* 컨테이너 04 */
+/* 컨테이너04 : 연락처 */
 #container04 {
-    background-color: var(--gray-color);
+    background-color: var(--deep-gray-color);
     width: 100%;
     height: 100vh;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    text-shadow: 3px 3px 3px darkgrey;
 }
-
-
+#container04 .contectTitle {
+    width: 100%;
+    height: 100px;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 50px;
+}
+#container04 .contectTitle h2 {
+    font-size: 35px;
+    color: var(--navy-color);
+}
