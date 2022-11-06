@@ -16,6 +16,7 @@
     margin: 0;
     scroll-behavior: smooth;
     box-sizing: border-box;
+    /* scroll-behavior: smooth; */
 }
 a {
     color: var(--white-color);
@@ -40,6 +41,9 @@ body {
     font-family: 'THEBOLDFONT', 'twayair' ;
     color: white;
 }
+
+
+
 
 /* 컨테이너01 : 시작페이지 */
 #container01 {
@@ -131,6 +135,7 @@ body {
 #container01 .main .window {
     padding: 30px 20px;
     position: absolute;
+    transition: 0.3s;
 }
 #container01 .main .window:hover {
     transform: scale3d(1.07, 1.07, 1.07);
@@ -211,6 +216,7 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
+    z-index: 1000;
 }
 #container01 .main .upBtn button {
     border-radius: 25px;
@@ -231,6 +237,155 @@ body {
 }
 #container01 .main .upBtn button:hover {
     background-color: var(--deep-yellow-color);
+}
+
+
+
+
+
+.downArray {
+    width: 100%;
+    height: 50px;
+}
+
+
+
+
+
+
+
+
+
+/* 컨테이너02 : 프로젝트 페이지 */
+#container02 {
+    text-shadow: 3px 3px 3px darkgrey;
+    background-color: var(--deep-gray-color);
+}
+#container02 .projectTitle {
+    top: 0;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    position: sticky;
+    transition: 0.3s;
+}
+#container02 .projectTitle:hover {
+    padding-left: 70px;
+    cursor: pointer;
+}
+#container02 .projectTitle h2 {
+    font-size: 35px;
+    color: var(--navy-color);
+}
+#container02 .main-content-1 {
+    background-color: var(--deep-gray-color);
+    width: 100%;
+    height: 300vh;
+}
+
+#container02 .main-content-1 .test {
+    text-align: center;
+}
+#container02 .main-content-1 .test img {
+    height: 500px;
+}
+
+#container02 .main-content-1 .sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+#container02 .main-content-1 .sticky .section {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: var(--deep-gray-color);
+}
+#container02 .main-content-1 .sticky .section .title {
+    border-top: 2px dotted var(--gray-color);
+    background-color: var(--deep-gray-color);
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    font-size: 2vh;
+    padding-left: 3vh;
+}
+#container02 .main-content-1 .sticky .section .content {
+    height: 94vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+#container02 .main-content-1 .sticky .section .content>img {
+    width: 50vw;
+    height: 50vh;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+/* 컨테이너03 : 자기소개 */
+#container03 {
+    background-color: var(--gray-color);
+    width: 100%;
+    height: 100vh;
+    text-shadow: 3px 3px 3px var(--deep-gray-color);
+}
+#container03 .introTitle {
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    transition: 0.3s;
+}
+#container03 .introTitle:hover {
+    padding-left: 70px;
+    cursor: pointer;
+}
+
+#container03 .introTitle h2 {
+    font-size: 35px;
+    color: var(--navy-color);
+}
+
+
+
+
+
+
+
+
+/* 컨테이너04 : 연락처 */
+#container04 {
+    background-color: var(--deep-gray-color);
+    width: 100%;
+    height: 100vh;
+    text-shadow: 3px 3px 3px darkgrey;
+}
+#container04 .contectTitle {
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    transition: 0.3s;
+}
+#container04 .contectTitle:hover {
+    padding-left: 70px;
+    cursor: pointer;
+}
+#container04 .contectTitle h2 {
+    font-size: 35px;
+    color: var(--navy-color);
 }
 
 /* 메인화면 - 흐르는 텍스트 영역 */
@@ -264,112 +419,4 @@ body {
         -webkit-transform: translate3d(-100%, 0, 0);
         transform: translate3d(-100%, 0, 0);
     }
-}
-
-/* 컨테이너02 : 프로젝트 화면 */
-#container02 {
-    background-color: var(--deep-gray-color);
-    width: 100%;
-    display: block;
-    text-shadow: 3px 3px 3px darkgrey;
-    padding-bottom: 20px;
-}
-/* 컨테이너02 : 프로젝트 화면 공통 레이아웃 */
-#container02 .project {
-    display: flex;
-}
-#container02 .projectTitle {
-    width: 100%;
-    height: 100px;
-    display: table-cell;
-    vertical-align: middle;
-    padding-left: 50px;
-}
-#container02 .projectTitle h2 {
-    font-size: 35px;
-    color: var(--navy-color);
-}
-#container02 .project .proScreen {
-    width: 50%;
-    height: 380px;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-/* #container02 .project01 .project01Video video{
-    width: 50%;
-} */
-#container02 .project .proNote {
-    width: 50%;
-    padding: 50px;
-}
-#container02 .project .proNote .moveBtn {
-    border: none;
-    padding: 10px 20px;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 20px;
-}
-#container02 .project .proNote .moveBtn:hover {
-    background-color: var(--deep-yellow-color);
-    transition: 0.3s ease-out;
-    color: white;
-}
-#container02 .project .proNote .moveBtn:not(:hover) {
-    transition: 0.3s ease-out;
-}
-
-/* 프로젝트01 */
-#container02 .project01 .pro01Screen {
-    background-image: url(/images/project01.png);
-}
-
-/* 프로젝트02 */
-#container02 .project02 .pro02Screen {
-    background-image: url(/images/project02.png);
-}
-#container02 .project02 .pro02Note {
-    text-align: end;
-}
-
-/* 프로젝트03 */
-#container02 .project03 .pro03Screen {
-    background-image: url(/images/project03.png);
-}
-
-/* 컨테이너03 : 자기소개 */
-#container03 {
-    background-color: var(--gray-color);
-    width: 100%;
-    height: 100vh;
-    text-shadow: 3px 3px 3px var(--deep-gray-color);
-}
-#container03 .introTitle {
-    width: 100%;
-    height: 100px;
-    display: table-cell;
-    vertical-align: middle;
-    padding-left: 50px;
-}
-#container03 .introTitle h2 {
-    font-size: 35px;
-    color: var(--navy-color);
-}
-
-/* 컨테이너04 : 연락처 */
-#container04 {
-    background-color: var(--deep-gray-color);
-    width: 100%;
-    height: 100vh;
-    text-shadow: 3px 3px 3px darkgrey;
-}
-#container04 .contectTitle {
-    width: 100%;
-    height: 100px;
-    display: table-cell;
-    vertical-align: middle;
-    padding-left: 50px;
-}
-#container04 .contectTitle h2 {
-    font-size: 35px;
-    color: var(--navy-color);
 }
