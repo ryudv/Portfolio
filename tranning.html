@@ -4,109 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <script src="https://kit.fontawesome.com/e133d6c60e.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
-    <div class="header">PROJECT</div>
-    <div class="main-content-1">
-        <div class="sticky">
-            <div class="section section-1">
-                <div class="title">#1 React TodoList</div>
-                <div class="content">
-                    <img src="./images/project01.png">
-                    <div>
-                        <h2>리액트js를 사용한 TodoList</h2>
-                        <span>Skill: HTML, CSS, React.js</span>
-                    </div>
-                </div>
-            </div>
-            <div class="section section-2">
-                <div class="title">#2 Reading Review</div>
-                <div class="content">
-                    <img src="./images/project02.png">
-                    <div>
-                        <h2>도서 리뷰 사이트</h2>
-                        <span>Skill: HTML, CSS, JavaScript</span>
-                    </div>
-                </div>
-            </div>
-            <div class="section section-3">
-                <div class="title">#3 Shooting Game!</div>
-                <div class="content">
-                    <img src="./images/project03.png">
-                    <div>
-                        <h2>자바스크립트를 사용한 미니게임</h2>
-                        <span>Skill: HTML, CSS, React.js</span>
-                    </div>
-                </div>
-            </div>
-            <div class="section section-4">
-                <div class="title">#4 어렵지 않아요 😁</div>
-                <div class="content">
-                    <img src="./image4.jpg">
-                    <div>
-                        <h2>리액트js를 사용한 TodoList</h2>
-                        <span>Skill: HTML, CSS, React.js</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <style>
+        body {
+        }
+        div {
+            height: 1000px;
+            text-align: center;
+            opacity: 0;
+            transition: 3s;
+        }
+    </style>
+    
+    <div><h1>안뇽</h1></div>
+    <div><h1>하이</h1></div>
+    <div><h1>바이</h1></div>
+    <div><img src="./images/testImg.png" alt=""></div>
 
     <script>
-        class FolderScroll {
-            constructor(wrapper, sticky) {
-                this.wrapper = wrapper
-                this.sticky = sticky
-                this.children = this.sticky.querySelectorAll('.section')
-                this.length = this.children.length
-                this.headerVh = 6
-                this.contentVh = 92 - this.headerVh * this.length
-                this.start = 0
-                this.end = 0
-            }
-
-            init() {
-                this.start = this.wrapper.offsetTop + 100
-                this.end = this.wrapper.offsetTop + this.wrapper.offsetHeight - innerHeight - 100
-
-                this.children.forEach((child, i) => {
-                    child.style.bottom = -(100 - this.headerVh * (this.length - i)) + 'vh'
-                    child.querySelector('.title').style.height = this.headerVh + 'vh'
-                    child.querySelector('.content').style.height = this.contentVh + 'vh'
-                })
-            }
-
-            animate() {
-                this.children.forEach((child, i) => {
-                    const unit = (this.end - this.start) / this.length
-                    const s = this.start + unit * i + 100
-                    const e = this.start + unit * (i + 1)
-
-                    if (scrollY <= s) {
-                        child.style.transform = `translate3d(0, 0, 0)`
-                    } else if (scrollY >= e) {
-                        child.style.transform = `translate3d(0, ${-this.contentVh}%, 0)`
-                    } else {
-                        child.style.transform =
-                            `translate3d(0, ${(scrollY - s) / (unit - 100) * (-this.contentVh)}%, 0)`
-                    }
-                })
-            }
-        }
-
-        const mainContent1 = document.querySelector('.main-content-1')
-        const sticky = document.querySelector('.sticky')
-        const folderScroll = new FolderScroll(mainContent1, sticky)
-        folderScroll.init()
-
-        window.addEventListener('resize', () => {
-            folderScroll.init()
+        let observer = new IntersectionObserver((e)=>{
+            e.forEach((박스)=>{
+                if(박스.isIntersecting) {
+                    박스.target.style.opacity = 1;
+                } else {
+                    박스.target.style.opacity = 0;
+                }
+            })
         })
-        window.addEventListener('scroll', () => {
-            folderScroll.animate()
-        })
+
+        let div = document.querySelectorAll('div')
+        //html요소를 감시해줌
+        observer.observe(div[0])
+        observer.observe(div[1])
+        observer.observe(div[2])
+        observer.observe(div[3])
     </script>
 </body>
 </html>

@@ -40,14 +40,11 @@ a {
 body {
     font-family: 'THEBOLDFONT', 'twayair' ;
     color: white;
+    background-color: var(--gray-color);
 }
-
-
-
 
 /* 컨테이너01 : 시작페이지 */
 #container01 {
-    background-color: var(--gray-color);
     width: 100%;
     height: 100vh;
 }
@@ -84,7 +81,6 @@ body {
 }
 #container01 .header .title .logoText h1 {
     font-size: 38px;
-    text-shadow: 3px 3px 3px var(--deep-gray-color);
 }
 #container01 .header .title .logoText h1:hover {
     color: var(--deep-yellow-color);
@@ -106,7 +102,7 @@ body {
 }
 #container01 .header .menuBtn ul li span {
     font-size: 25px;
-    text-shadow: 2px 2px 2px var(--deep-gray-color);
+    /* text-shadow: 3px 3px 3px darkgrey; */
 }
 #container01 .header .menuBtn ul li span:hover {
     color: var(--deep-yellow-color);
@@ -132,14 +128,18 @@ body {
 #container01 .main .mainImg img {
     width: 600px;
 }
+#container01 .main .window2 img{
+    width: 250px;
+    padding: 0;
+}
 #container01 .main .window {
     padding: 30px 20px;
     position: absolute;
     transition: 0.3s;
 }
-#container01 .main .window:hover {
+/* #container01 .main .window:hover {
     transform: scale3d(1.07, 1.07, 1.07);
-}
+} */
 #container01 .main .window1 {
     background: url(/images/window1.png);
     background-repeat: no-repeat;
@@ -149,6 +149,7 @@ body {
     top: 12%;
     left: 23%;
     z-index: 2;
+    animation: window-ani 2s infinite;
 }
 #container01 .main .window2 {
     background: url(/images/window2.png);
@@ -159,6 +160,8 @@ body {
     top: 6%;
     left: 40%;
     z-index: 3;
+    animation: window-ani 2s infinite;
+    animation-delay: 0.3s;
 }
 #container01 .main .window3 {
     background: url(/images/window3.png);
@@ -169,10 +172,24 @@ body {
     top: 20%;
     left: 65%;
     z-index: 1;
+    animation: window-ani 2s infinite;
+    animation-delay: 0.7s;
+}
+@keyframes window-ani {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        transform: scale3d(1.07, 1.07, 1.07);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
 }
 #container01 .main .window1 p, .window2 p, .window3 p {
     color: var(--black-color);
 }
+
 /* 메인화면 - 텍스트 */
 #container01 .main .text {
     position: absolute;
@@ -239,156 +256,62 @@ body {
     background-color: var(--deep-yellow-color);
 }
 
-
-
-
-
+/* down 화살표 */
 .downArray {
     width: 100%;
-    height: 50px;
-}
-
-
-
-
-
-
-
-
-
-/* 컨테이너02 : 프로젝트 페이지 */
-#container02 {
-    text-shadow: 3px 3px 3px darkgrey;
-    background-color: var(--deep-gray-color);
-}
-#container02 .projectTitle {
-    top: 0;
-    width: 100%;
-    height: 8vh;
-    display: flex;
-    align-items: center;
-    padding-left: 50px;
-    position: sticky;
-    transition: 0.3s;
-}
-#container02 .projectTitle:hover {
-    padding-left: 70px;
-    cursor: pointer;
-}
-#container02 .projectTitle h2 {
-    font-size: 35px;
-    color: var(--navy-color);
-}
-#container02 .main-content-1 {
-    background-color: var(--deep-gray-color);
-    width: 100%;
-    height: 300vh;
-}
-
-#container02 .main-content-1 .test {
+    height: 150px;
     text-align: center;
 }
-#container02 .main-content-1 .test img {
-    height: 500px;
+.downArray i {
+    font-size: 30px;
+    color: var(--navy-color);
+    animation: array-ani 1.0s ease infinite;
+}
+@keyframes array-ani {
+    0% {
+        margin-top: 10px;
+    }
+    50% {
+        margin-top: 30px;
+    }
+    100% {
+        margin-top: 10px;
+    }
 }
 
-#container02 .main-content-1 .sticky {
-    position: sticky;
-    top: 0;
+/* 컨테이너 타이틀 공통*/
+.operBox {
+    text-align: center;
+    opacity: 0;
+    transition: 3s;
+    padding-top: 50px;
+    height: 200px;
+}
+.operBox h2 {
+    font-size: 50px;
+    color: var(--navy-color);
+    text-shadow: 5px 5px 5px var(--deep-gray-color);
+}
+
+/* 컨테이너02 : 프로젝트 화면 */
+#container02 {
     width: 100%;
     height: 100vh;
-    overflow: hidden;
 }
-#container02 .main-content-1 .sticky .section {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: var(--deep-gray-color);
-}
-#container02 .main-content-1 .sticky .section .title {
-    border-top: 2px dotted var(--gray-color);
-    background-color: var(--deep-gray-color);
-    height: 6vh;
-    display: flex;
-    align-items: center;
-    font-size: 2vh;
-    padding-left: 3vh;
-}
-#container02 .main-content-1 .sticky .section .content {
-    height: 94vh;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-}
-#container02 .main-content-1 .sticky .section .content>img {
-    width: 50vw;
-    height: 50vh;
-    object-fit: cover;
-}
-
-
-
-
-
-
 
 /* 컨테이너03 : 자기소개 */
 #container03 {
-    background-color: var(--gray-color);
     width: 100%;
     height: 100vh;
-    text-shadow: 3px 3px 3px var(--deep-gray-color);
 }
-#container03 .introTitle {
-    width: 100%;
-    height: 8vh;
-    display: flex;
-    align-items: center;
-    padding-left: 50px;
-    transition: 0.3s;
-}
-#container03 .introTitle:hover {
-    padding-left: 70px;
-    cursor: pointer;
-}
-
-#container03 .introTitle h2 {
-    font-size: 35px;
-    color: var(--navy-color);
-}
-
-
-
-
-
-
-
 
 /* 컨테이너04 : 연락처 */
 #container04 {
-    background-color: var(--deep-gray-color);
     width: 100%;
     height: 100vh;
-    text-shadow: 3px 3px 3px darkgrey;
-}
-#container04 .contectTitle {
-    width: 100%;
-    height: 8vh;
-    display: flex;
-    align-items: center;
-    padding-left: 50px;
-    transition: 0.3s;
-}
-#container04 .contectTitle:hover {
-    padding-left: 70px;
-    cursor: pointer;
-}
-#container04 .contectTitle h2 {
-    font-size: 35px;
-    color: var(--navy-color);
 }
 
-/* 메인화면 - 흐르는 텍스트 영역 */
+/* 흐르는 텍스트 영역 */
 .flow-container {
     background-color: var(--deep-yellow-color);
 }
@@ -399,6 +322,7 @@ body {
     overflow: hidden;
     transition: 1s;
     font-size: 30px;
+    text-shadow: none;
 }
 .flow-text:hover .flow-wrap {
     animation-play-state: paused;
