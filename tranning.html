@@ -6,41 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/e133d6c60e.js" crossorigin="anonymous"></script>
     <title>Document</title>
+    <style>
+
+    </style>
 </head>
 <body>
-    <style>
-        body {
-        }
-        div {
-            height: 1000px;
-            text-align: center;
-            opacity: 0;
-            transition: 3s;
-        }
-    </style>
+
     
-    <div><h1>안뇽</h1></div>
-    <div><h1>하이</h1></div>
-    <div><h1>바이</h1></div>
-    <div><img src="./images/testImg.png" alt=""></div>
 
     <script>
-        let observer = new IntersectionObserver((e)=>{
-            e.forEach((박스)=>{
-                if(박스.isIntersecting) {
-                    박스.target.style.opacity = 1;
-                } else {
-                    박스.target.style.opacity = 0;
-                }
-            })
-        })
 
-        let div = document.querySelectorAll('div')
-        //html요소를 감시해줌
-        observer.observe(div[0])
-        observer.observe(div[1])
-        observer.observe(div[2])
-        observer.observe(div[3])
     </script>
 </body>
 </html>

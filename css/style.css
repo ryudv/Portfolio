@@ -43,6 +43,18 @@ body {
     background-color: var(--gray-color);
 }
 
+/* 스크롤바 커스텀 */
+body::-webkit-scrollbar {
+    width: 20px;  /* 스크롤바 너비 */
+}
+body::-webkit-scrollbar-thumb {
+    height: 25%; /* 스크롤바 길이 */
+    background: var(--deep-yellow-color); /* 스크롤바 색상 */
+}
+body::-webkit-scrollbar-track {
+    background: var(--deep-gray-color);  /*스크롤바 배경색상*/
+}
+
 /* 컨테이너01 : 시작페이지 */
 #container01 {
     width: 100%;
@@ -128,18 +140,15 @@ body {
 #container01 .main .mainImg img {
     width: 600px;
 }
-#container01 .main .window2 img{
-    width: 250px;
-    padding: 0;
-}
 #container01 .main .window {
     padding: 30px 20px;
     position: absolute;
-    transition: 0.3s;
+    transition: 0.2s;
 }
-/* #container01 .main .window:hover {
+#container01 .main .window:hover {
     transform: scale3d(1.07, 1.07, 1.07);
-} */
+    cursor: url(/images/star.cur), auto;
+}
 #container01 .main .window1 {
     background: url(/images/window1.png);
     background-repeat: no-repeat;
@@ -149,7 +158,6 @@ body {
     top: 12%;
     left: 23%;
     z-index: 2;
-    animation: window-ani 2s infinite;
 }
 #container01 .main .window2 {
     background: url(/images/window2.png);
@@ -160,8 +168,11 @@ body {
     top: 6%;
     left: 40%;
     z-index: 3;
-    animation: window-ani 2s infinite;
-    animation-delay: 0.3s;
+}
+/* 타이핑 효과 */
+#container01 .main .window2 .introText {
+    color: black;
+    font-size: 21px;
 }
 #container01 .main .window3 {
     background: url(/images/window3.png);
@@ -172,22 +183,12 @@ body {
     top: 20%;
     left: 65%;
     z-index: 1;
-    animation: window-ani 2s infinite;
-    animation-delay: 0.7s;
-}
-@keyframes window-ani {
-    0% {
-        transform: scale3d(1, 1, 1);
-    }
-    50% {
-        transform: scale3d(1.07, 1.07, 1.07);
-    }
-    100% {
-        transform: scale3d(1, 1, 1);
-    }
 }
 #container01 .main .window1 p, .window2 p, .window3 p {
     color: var(--black-color);
+}
+#container01 .main .window2 p {
+    font-size: 21px;
 }
 
 /* 메인화면 - 텍스트 */
@@ -257,13 +258,17 @@ body {
 }
 
 /* down 화살표 */
-.downArray {
+.ArrowBox {
     width: 100%;
-    height: 150px;
+    height: 300px;
     text-align: center;
 }
-.downArray i {
-    font-size: 30px;
+.ArrowBox .arrow {
+    position: sticky;
+    top: 600px;
+}
+.ArrowBox .arrow i {
+    font-size: 25px;
     color: var(--navy-color);
     animation: array-ani 1.0s ease infinite;
 }
@@ -283,13 +288,13 @@ body {
 .operBox {
     text-align: center;
     opacity: 0;
-    transition: 3s;
-    padding-top: 50px;
-    height: 200px;
+    transition: 2s;
+    height: 10%;
+    margin-top: 20px;
 }
 .operBox h2 {
     font-size: 50px;
-    color: var(--navy-color);
+    color: var(--deep-yellow-color);
     text-shadow: 5px 5px 5px var(--deep-gray-color);
 }
 
@@ -298,6 +303,14 @@ body {
     width: 100%;
     height: 100vh;
 }
+
+
+
+
+
+
+
+
 
 /* 컨테이너03 : 자기소개 */
 #container03 {
