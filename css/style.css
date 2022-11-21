@@ -16,7 +16,6 @@
     margin: 0;
     scroll-behavior: smooth;
     box-sizing: border-box;
-    /* scroll-behavior: smooth; */
 }
 a {
     color: var(--white-color);
@@ -50,7 +49,7 @@ body::-webkit-scrollbar {
 }
 body::-webkit-scrollbar-thumb {
     height: 25%; /* 스크롤바 길이 */
-    background: var(--deep-yellow-color); /* 스크롤바 색상 */
+    background: var(--yellow-color); /* 스크롤바 색상 */
 }
 body::-webkit-scrollbar-track {
     background: var(--deep-gray-color);  /*스크롤바 배경색상*/
@@ -60,11 +59,14 @@ body::-webkit-scrollbar-track {
 #container01 {
     width: 100%;
     height: 100vh;
+    position: fixed;
+    top: 0;
 }
 
 /* 헤더 */
 #container01 .header {
-    height: 13vh;
+    width: 100%;
+    height: 12vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -94,13 +96,19 @@ body::-webkit-scrollbar-track {
 }
 #container01 .header .title .logoText h1 {
     font-size: 38px;
+    display: inline;
+    background: linear-gradient(to right, rgba(255,255,255,0) 50% ,#ffd700 50%);
+    background-size: 200%;
+    transition: .2s;
+    padding: 0 5px;
 }
 #container01 .header .title .logoText h1:hover {
-    color: var(--deep-yellow-color);
-    transition: 0.3s ease-out;
+    color: var(--navy-color);
+    transition: 0.5s ease-out;
+    background-position: -100% 0;
 }
 #container01 .header .title .logoText h1:not(:hover) {
-    transition: 0.3s ease-out;
+    transition: 0.5s ease-out;
 }
 
 /* 헤더 - 메뉴버튼 */
@@ -117,9 +125,15 @@ body::-webkit-scrollbar-track {
     background: linear-gradient(to right, rgba(255,255,255,0) 50% ,#ffd700 50%);
     background-size: 200%;
     transition: .3s;
+    padding: 0 5px;
 }
 #container01 .header .menuBtn ul li .desc:hover {
     background-position: -100% 0;
+    color: var(--navy-color);
+    transition: 0.5s ease-out;
+}
+#container01 .header .menuBtn ul li .desc:not(hover) {
+    transition: 0.5s ease-out;
 }
 
 /* 메인화면 */
@@ -144,7 +158,7 @@ body::-webkit-scrollbar-track {
     transition: 0.2s;
 }
 #container01 .main .window:hover {
-    transform: scale3d(1.07, 1.07, 1.07);
+    transform: scale3d(1.1, 1.1, 1.1);
     cursor: url(/images/star.cur), auto;
 }
 #container01 .main .window1 {
@@ -221,7 +235,7 @@ body::-webkit-scrollbar-track {
         color: var(--white-color);
     }
     50% {
-        color: var(--yellow-color);
+        color: var(--navy-color);
     }
     100% {
         color: var(--white-color);
@@ -255,10 +269,31 @@ body::-webkit-scrollbar-track {
     background-color: var(--deep-yellow-color);
 }
 
+/* 컨테이너 타이틀 공통*/
+.operBox {
+    text-align: center;
+    opacity: 0;
+    transition: 2s;
+    height: 10%;
+    padding-top: 20px;
+}
+.operBox h2 {
+    font-size: 50px;
+    color: var(--navy-color);
+}
+
+/* 컨테이너02 : 프로젝트 화면 */
+#container02 {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    top: 100vh;
+    background-color: var(--deep-yellow-color);
+}
 /* down 화살표 */
 .ArrowBox {
     width: 100%;
-    height: 300px;
+    height: 100px;
     text-align: center;
 }
 .ArrowBox .arrow i {
@@ -278,114 +313,29 @@ body::-webkit-scrollbar-track {
     }
 }
 
-/* 컨테이너 타이틀 공통*/
-.operBox {
-    text-align: center;
-    opacity: 0;
-    transition: 2s;
-    height: 10%;
-    margin-top: 20px;
-}
-.operBox h2 {
-    font-size: 50px;
-    color: var(--deep-yellow-color);
-    text-shadow: 5px 5px 5px var(--deep-gray-color);
-}
-
-/* 컨테이너02 : 프로젝트 화면 */
-#container02 {
-    width: 100%;
-    height: 100%;
-}
-
-
-
-
-
-
-.wrap {
-    width: 100%;
-}
-.box {
-    width: 30%;
-    height: 200px;
-    margin-left: 50px;
-    display: flex;
-    background-color: #febf00;
-    transition: 1s linear;
-}
-.box.active {
-    width: 50%;
-    height: 500px;
-    background: #f03d3d;
-    color: #fff;
-}
-.wrap2 {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-}
-.box2 {
-    width: 30%;
-    height: 200px;
-    margin-right: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    background-color: #febf00;
-    transition: 1s linear;
-}
-.box2.active {
-    width: 50%;
-    height: 500px;
-    background: #f03d3d;
-    color: #fff;
-}
-.box:nth-child(1) {
-    background-image: url(/images/projectTest01.png);
-    background-size: 700px;
-    background-position: center;
-}
-.wrap2:nth-child(2) .box {
-    background-image: url(/images/projectTest02.png);
-    background-size: 700px;
-    background-position: center;
-}
-.wrap2:nth-child(3) .box {
-    background-image: url(/images/projectTest03.png);
-    background-size: 700px;
-    background-position: center;
-}
-.wrap2:nth-child(4) .box {
-    background-image: url(/images/projectTest04.png);
-    background-size: 700px;
-    background-position: center;
-}
-
-
-
-
-
-
-
-
-
 /* 컨테이너03 : 자기소개 */
 #container03 {
     width: 100%;
     height: 100vh;
+    position: relative;
+    top: 100vh;
+    background-color: var(--gray-color);
 }
 
 /* 컨테이너04 : 연락처 */
 #container04 {
     width: 100%;
     height: 100vh;
+    position: relative;
+    top: 100vh;
+    background-color: var(--white-color);
+}
+#container04 p{
+    color: black;
 }
 
 /* 흐르는 텍스트 영역 */
-.flow-container {
+/* .flow-container {
     background-color: var(--deep-yellow-color);
 }
 .flow-text {
@@ -416,4 +366,4 @@ body::-webkit-scrollbar-track {
         -webkit-transform: translate3d(-100%, 0, 0);
         transform: translate3d(-100%, 0, 0);
     }
-}
+} */
