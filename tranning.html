@@ -8,7 +8,7 @@
     <title>Document</title>
     <style>
 
-    .container {
+    .cardBox {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -36,7 +36,7 @@
     </style>
 </head>
 <body>
-    <ul class="container">
+    <ul class="cardBox">
         <li class="card">아이템 1</li>
         <li class="card">아이템 2</li>
         <li class="card">아이템 3</li>
@@ -50,18 +50,14 @@
     </ul>
     <script>
     const $cards = document.querySelectorAll('.card')
-
-    const observer = new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-    entry.target.classList.toggle("visible", entry.isIntersecting)
+    
+    const observer = new IntersectionObserver(e => {
+        e.forEach(entry => {
+            entry.target.classList.toggle("visible", entry.isIntersecting)
     })
     }, { threshold: 0.5 })
 
-    $cards.forEach(card => {
-
-    observer.observe(card)
-    });
+    $cards.forEach(card => observer.observe(card));
     </script>
 </body>
 </html>

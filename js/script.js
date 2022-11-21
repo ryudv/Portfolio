@@ -15,15 +15,15 @@ setInterval(typing, 100);
 
 // 컨테이너박스의 타이틀이 나타나는 효과
 let observer = new IntersectionObserver((e)=>{
-    e.forEach((box)=>{
+    e.forEach((box) => {
         if(box.isIntersecting) {
             box.target.style.opacity = 1;
             box.target.style.transform = 'translateY(0)';
         } else {
-            box.target.style.opacity = 0;
+            // box.target.style.opacity = 0;
             box.target.style.transform = 'translateY(100px)';
         }
-    }, { threshold: 1 });
+    }, { threshold: 0.5 });
 });
 let operBox = document.getElementsByClassName('operBox');
 
@@ -32,35 +32,6 @@ observer.observe(operBox[1]);
 observer.observe(operBox[2]);
 
 
-
-
-
-const options = {
-    root: null, // viewport
-    rootMargin: "0px",
-    threshold: 1.0 
-     // threshold: 0.5 옵션을 전달해, 요소가 50% 이상 보일 때 콜백을 호출
-    // threshold의 범위는 0 ~ 1 (0% ~ 100%)
-}
-
-const observer1 = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            //entry.target.style.visibility ='visible';
-        } else {
-            entry.target.classList.remove('active');
-            //entry.target.style.visibility ='hidden';
-        }
-    });
-}, options);
-
-const boxList = document.querySelectorAll('.box');
-const boxList2 = document.querySelectorAll('.box2');
-
-// 반복문을 돌려 모든 DOM에 적용
-boxList.forEach(el => observer1.observe(el));
-boxList2.forEach(el => observer1.observe(el));
 
 
 
@@ -115,3 +86,14 @@ boxList2.forEach(el => observer1.observe(el));
 //       });
 //     });
 //   }
+
+
+const $cards = document.querySelectorAll('.card')
+    
+    const observer2 = new IntersectionObserver(e => {
+        e.forEach(entry => {
+            entry.target.classList.toggle("visible", entry.isIntersecting)
+    })
+    }, { threshold: 1 })
+
+    $cards.forEach(card => observer2.observe(card));
