@@ -13,7 +13,7 @@ function typing(){
 }
 setInterval(typing, 100);
 
-// 컨테이너박스의 타이틀이 나타나는 효과
+// 모든 컨테이너 박스의 타이틀 효과
 let observer = new IntersectionObserver((e)=>{
     e.forEach((box) => {
         if(box.isIntersecting) {
@@ -31,10 +31,40 @@ observer.observe(operBox[0]);
 observer.observe(operBox[1]);
 observer.observe(operBox[2]);
 
+// 컨테이너2 프로젝트 나타나는 효과
+const $cards = document.querySelectorAll('.card')
+    
+const observer2 = new IntersectionObserver(e => {
+    e.forEach(entry => {
+        entry.target.classList.toggle("visible", entry.isIntersecting)
+})
+}, { threshold: 0.5 })
+
+$cards.forEach(card => observer2.observe(card));
 
 
 
 
+
+
+
+
+
+
+
+var mainSlider = $('.main-slider');
+var innerText = $('.inner-text');
+
+mainSlider.slick({
+    slidesToShow: 1,
+    dots: true,
+});
+
+mainSlider.on('wheel', function(e) {
+    e.preventDefault();
+
+    if (e.originalEvent.deltaY < 0) { $(this).slick('slickPrev'); } else { $(this).slick('slickNext'); } 
+});
 
 
 
@@ -88,12 +118,3 @@ observer.observe(operBox[2]);
 //   }
 
 
-const $cards = document.querySelectorAll('.card')
-    
-    const observer2 = new IntersectionObserver(e => {
-        e.forEach(entry => {
-            entry.target.classList.toggle("visible", entry.isIntersecting)
-    })
-    }, { threshold: 1 })
-
-    $cards.forEach(card => observer2.observe(card));

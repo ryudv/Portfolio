@@ -55,6 +55,10 @@ body::-webkit-scrollbar-track {
     background: var(--deep-gray-color);  /*스크롤바 배경색상*/
 }
 
+#start {
+    width: 100vw;
+    height: 100vh;
+}
 /* 컨테이너01 : 시작페이지 */
 #container01 {
     width: 100%;
@@ -62,7 +66,6 @@ body::-webkit-scrollbar-track {
     position: fixed;
     top: 0;
 }
-
 /* 헤더 */
 #container01 .header {
     width: 100%;
@@ -140,11 +143,10 @@ body::-webkit-scrollbar-track {
 #container01 .main {
     width: 100%;
     height: 85vh;
-    position: relative;
 }
 /* 메인화면 - 일러스트 */
 #container01 .main .mainImg {
-    position: absolute;
+    position: fixed;
     bottom: 5%;
     left: 30%;
     z-index: 1000;
@@ -154,7 +156,7 @@ body::-webkit-scrollbar-track {
 }
 #container01 .main .window {
     padding: 30px 20px;
-    position: absolute;
+    position: fixed;
     transition: 0.2s;
 }
 #container01 .main .window:hover {
@@ -167,7 +169,7 @@ body::-webkit-scrollbar-track {
     background-size: 200px;
     width: 200px;
     height: 300px;
-    top: 12%;
+    bottom: 38%;
     left: 23%;
     z-index: 2;
 }
@@ -177,7 +179,7 @@ body::-webkit-scrollbar-track {
     background-size: 300px;
     width: 300px;
     height: 300px;
-    top: 6%;
+    bottom: 43%;
     left: 40%;
     z-index: 3;
 }
@@ -192,7 +194,7 @@ body::-webkit-scrollbar-track {
     background-size: 150px;
     width: 150px;
     height: 250px;
-    top: 20%;
+    bottom: 43%;
     left: 65%;
     z-index: 1;
 }
@@ -205,7 +207,7 @@ body::-webkit-scrollbar-track {
 
 /* 메인화면 - 텍스트 */
 #container01 .main .text {
-    position: absolute;
+    position: fixed;
     background-color: var(--navy-color);
     padding-left: 5px;
     padding-right: 10px;
@@ -242,13 +244,13 @@ body::-webkit-scrollbar-track {
     }
 }
 /* 메인화면 - up버튼 */
-#container01 .main .upBtn {
-    position: fixed;
+.upBtn {
     bottom: 20px;
     right: 20px;
-    z-index: 1000;
+    position: fixed;
+    z-index: 9999;
 }
-#container01 .main .upBtn button {
+.upBtn button {
     border-radius: 25px;
     width: 50px;
     height: 40px;
@@ -257,15 +259,15 @@ body::-webkit-scrollbar-track {
     outline: none;
     box-shadow: 1px 4px 0 rgb(0,0,0,0.5);
 }
-#container01 .main .upBtn button i {
+.upBtn button i {
     color: var(--black-color);
 }
-#container01 .main .upBtn button:active {
+.upBtn button:active {
     box-shadow: 1px 1px 0 rgb(0,0,0,0.5);
     position: relative;
     top: 2px;
 }
-#container01 .main .upBtn button:hover {
+.upBtn button:hover {
     background-color: var(--deep-yellow-color);
 }
 
@@ -274,7 +276,7 @@ body::-webkit-scrollbar-track {
     text-align: center;
     opacity: 0;
     transition: 2s;
-    height: 10%;
+    /* height: 20%; */
     padding-top: 20px;
 }
 .operBox h2 {
@@ -288,6 +290,11 @@ body::-webkit-scrollbar-track {
     position: relative;
     top: 100vh;
     background-color: var(--deep-yellow-color);
+    padding-bottom: 100px;
+    border-radius: 30px 30px 0 0;
+}
+#container02 .projectTitle {
+    margin-bottom: 50px;
 }
 /* down 화살표 */
 .ArrowBox {
@@ -313,29 +320,37 @@ body::-webkit-scrollbar-track {
 }
 
 
+
+
 .cardBox {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     width: 100%;
-    }
-
-    .card {
+}
+.card {
     padding: 2rem;
-    height: 500px;
+    height: 70vh;
     list-style: none;
-    background-color: #191970;
+    background-color: var(--yellow-color);
     opacity: 0;
-    transition: 1s linear;
+    transition: .7s linear;
     transform: translateX(200px);
-    transition: .5s ease-in-out all;
-    width: 500px;
-    }
-
-    .card.visible {
+    display: flex;
+}
+.card.visible {
     transform: translateX(0);
     opacity: 1;
-    }
+}
+.cardImg {
+    width: 50%;
+}
+.cardInform {
+    width: 50%;
+}
+.card img {
+    width: 100%;
+}
+
 
 
 
@@ -343,11 +358,80 @@ body::-webkit-scrollbar-track {
 /* 컨테이너03 : 자기소개 */
 #container03 {
     width: 100%;
-    height: 100vh;
+    height: 150vh;
     position: relative;
     top: 100vh;
     background-color: var(--gray-color);
 }
+#container03 .introTitle {
+    margin-bottom: 50px;
+}
+.main-slider {
+    position:relative;
+    width:80%;
+    height:50%;
+}
+.main-slider .slick-list, .main-slider .slick-track {
+    height:100%;
+}
+
+.main-slider .slick-slide {
+    position:relative;
+}
+
+.item {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+.item-1 {
+    background-color:red;
+}
+
+.item-2 {
+    background-color:blue;
+}
+
+.item-3 {
+    background-color:green;
+}
+
+.item-4 {
+    background-color:gold;
+}
+
+.item-5 {
+    background-color:blue;
+}
+
+.inner-text {
+    width: 300px;
+    height: 200px;
+    margin: 20px 0 0 20px;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.inner-text p {
+    font-size: 15px;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 컨테이너04 : 연락처 */
 #container04 {
