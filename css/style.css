@@ -142,22 +142,29 @@ body::-webkit-scrollbar-track {
 /* 메인화면 */
 #container01 .main {
     width: 100%;
-    height: 85vh;
+    height: 88vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+#container01 .main .mainView {
+    width: 80%;
+    height: 600px;
+    position: relative;
 }
 /* 메인화면 - 일러스트 */
-#container01 .main .mainImg {
-    position: fixed;
-    bottom: 5%;
-    left: 30%;
-    z-index: 1000;
-}
 #container01 .main .mainImg img {
-    width: 600px;
+    width: 60%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-40%, 0);
+    z-index: 10;
 }
 #container01 .main .window {
     padding: 30px 20px;
-    position: fixed;
     transition: 0.2s;
+    position: absolute;
 }
 #container01 .main .window:hover {
     transform: scale3d(1.1, 1.1, 1.1);
@@ -166,22 +173,20 @@ body::-webkit-scrollbar-track {
 #container01 .main .window1 {
     background: url(/images/window1.png);
     background-repeat: no-repeat;
-    background-size: 200px;
-    width: 200px;
-    height: 300px;
-    bottom: 38%;
-    left: 23%;
-    z-index: 2;
+    background-size: 100%;
+    width: 18%;
+    height: 36%;
+    bottom: 50%;
+    left: 18%;
 }
 #container01 .main .window2 {
     background: url(/images/window2.png);
     background-repeat: no-repeat;
-    background-size: 300px;
-    width: 300px;
-    height: 300px;
-    bottom: 43%;
-    left: 40%;
-    z-index: 3;
+    background-size: 100%;
+    width: 26%;
+    height: 50%;
+    bottom: 48%;
+    left: 38%;
 }
 /* 타이핑 효과 */
 #container01 .main .window2 .introText {
@@ -191,11 +196,11 @@ body::-webkit-scrollbar-track {
 #container01 .main .window3 {
     background: url(/images/window3.png);
     background-repeat: no-repeat;
-    background-size: 150px;
-    width: 150px;
-    height: 250px;
-    bottom: 43%;
-    left: 65%;
+    background-size: 100%;
+    width: 13%;
+    height: 50%;
+    bottom: 40%;
+    left: 66%;
     z-index: 1;
 }
 #container01 .main .window1 p, .window2 p, .window3 p {
