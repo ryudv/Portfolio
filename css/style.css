@@ -154,7 +154,7 @@ body::-webkit-scrollbar-track {
 }
 /* 메인화면 - 일러스트 */
 #container01 .main .mainImg img {
-    width: 60%;
+    width: 50%;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -323,41 +323,53 @@ body::-webkit-scrollbar-track {
         margin-top: 10px;
     }
 }
-
-
-
-
-.cardBox {
+#container02 .cardBox {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
-.card {
+#container02 .cardBox .card {
     padding: 2rem;
     height: 70vh;
     list-style: none;
-    background-color: var(--yellow-color);
     opacity: 0;
     transition: .7s linear;
     transform: translateX(200px);
     display: flex;
 }
-.card.visible {
+#container02 .cardBox .card.visible {
     transform: translateX(0);
     opacity: 1;
 }
-.cardImg {
+#container02 .cardBox .card .cardImg {
     width: 50%;
+    display: flex;
+    align-items: center;
 }
-.cardInform {
-    width: 50%;
-}
-.card img {
+#container02 .cardBox .card .cardImg img {
     width: 100%;
 }
-
-
-
+#container02 .cardBox .card .cardInform {
+    width: 50%;
+    text-align: center;
+    padding : 100px 0;
+}
+#container02 .cardBox .card .cardInform button {
+    border-radius: 25px;
+    border: 5px solid blue;
+    width: 70px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 15px;
+}
+#container02 .cardBox .card .cardInform button:hover {
+    background-color: blue;
+    transition: 0.3s;
+    color: white;
+}
+#container02 .cardBox .card .cardInform button:not(:hover) {
+    transition: 0.5s;
+}
 
 
 /* 컨테이너03 : 자기소개 */
@@ -373,8 +385,8 @@ body::-webkit-scrollbar-track {
 }
 .main-slider {
     position:relative;
-    width:80%;
-    height:50%;
+    width:50%;
+    height:30%;
 }
 .main-slider .slick-list, .main-slider .slick-track {
     height:100%;
@@ -444,42 +456,22 @@ body::-webkit-scrollbar-track {
     height: 100vh;
     position: relative;
     top: 100vh;
-    background-color: var(--white-color);
+    background-color: var(--gray-color);
+}
+#container04 .operBox {
+    animation: font-ani 2s infinite;
+}
+@keyframes font-ani {
+    0% {
+        transform: rotate(45%);
+    }
+    100% {
+        transform: rotate(-45%);
+    }
 }
 #container04 p{
     color: black;
 }
-
-/* 흐르는 텍스트 영역 */
-/* .flow-container {
-    background-color: var(--deep-yellow-color);
+#container04 a{
+    font-size: 50px;
 }
-.flow-text {
-    display: flex;
-    flex: 0 0 auto;
-    white-space: nowrap;
-    overflow: hidden;
-    transition: 1s;
-    font-size: 30px;
-    text-shadow: none;
-}
-.flow-text:hover .flow-wrap {
-    animation-play-state: paused;
-    color: var(--navy-color);
-    cursor: pointer;
-}
-.flow-wrap {
-    animation: textLoop 10s linear infinite;
-    margin-right: 20px;
-    color: var(--deep-blue-color);
-}
-@keyframes textLoop {
-    0% {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-    100% {
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-100%, 0, 0);
-    }
-} */
