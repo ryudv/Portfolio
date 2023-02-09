@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="https://kit.fontawesome.com/e133d6c60e.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- slick 불러오기 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
-    <title>Portfolio of Ryusky</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://kit.fontawesome.com/e133d6c60e.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- slick 불러오기 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+  <title>Portfolio of Ryusky</title>
 </head>
+
 <body>
-    <!-- 첫페이지로 이동을 위한 div -->
-    <div id="start"></div>
+  <!-- 첫페이지로 이동을 위한 div -->
+  <div id="start"></div>
 
-    <!-- 1. 컨테이너 : 시작페이지-->
-    <div id="container01" class="container">
-        <!-- 헤더 -->
-        <div class="header">
-            <div class="title">
-                <div class="logoImg"></div>
-                <div class="logoText">
-                    <a href="#container01"><h1>RyuHaNeul</h1></a>
-                </div>
-            </div>
-            <div class="menuBtn">
-                <ul>
-                    <li><a href="#container02"><span class="desc">PROJECT</span></a></li>
-                    <li><a href="#container03"><span class="desc">ABOUTME</span></a></li>
-                    <li><a href="#container04"><span class="desc">CONTACT</span></a></li>
-                </ul>
-            </div>   
+  <!-- 1. 컨테이너 : 시작페이지-->
+  <div id="container01" class="container">
+    <!-- 헤더 -->
+    <div class="header">
+      <div class="title">
+        <div class="logoImg"></div>
+        <div class="logoText">
+          <a href="#container01">
+            <h1>RyuHaNeul</h1>
+          </a>
         </div>
+      </div>
+      <div class="menuBtn">
+        <ul>
+          <li><a href="#container02"><span class="desc">PROJECT</span></a></li>
+          <li><a href="#container03"><span class="desc">ABOUTME</span></a></li>
+          <li><a href="#container04"><span class="desc">CONTACT</span></a></li>
+        </ul>
+      </div>
+    </div>
 
-        <!-- 메인화면 일러스트-->
-        <div class="main">
-            <div class="mainView">
-                <div class="mainImg">
-                    <img src="./images/mainImage.png" alt="">
-                </div>
-                <!-- <div class="window window1">
+    <!-- 메인화면 일러스트-->
+    <div class="main">
+      <div class="mainView">
+        <div class="mainImg">
+          <img src="./images/mainImage.png" alt="">
+        </div>
+        <!-- <div class="window window1">
                     <p></p>
                 </div>
                 <div class="window window2">
@@ -56,122 +61,174 @@
                 <div class="text text2"><i>CSS</i></div>
                 <div class="text text3"><i>JAVA SCRIPT</i></div> -->
 
-                <div class="upBtn">
-                    <a href="#container01"><button><i class="fas fa-arrow-up"></i></button></a>
-                </div>
-            </div>
+        <div class="upBtn">
+          <a href="#container01"><button><i class="fas fa-arrow-up"></i></button></a>
         </div>
+      </div>
     </div>
-    
-    <!-- 위로가기 버튼 -->
-    <div class="upBtn">
-        <a href="#start"><button><i class="fas fa-arrow-up"></i></button></a>
-    </div>
-    
+  </div>
 
-    <!-- 2.컨테이너 : 프로젝트 화면 -->
-    <div id="container02" class="container">
-        <div class="ArrowBox">
-            <div class="arrow"><i class="fas fa-arrow-down"></i></div>
+  <!-- 위로가기 버튼 -->
+  <div class="upBtn">
+    <a href="#start"><button><i class="fas fa-arrow-up"></i></button></a>
+  </div>
+
+
+  <!-- 2.컨테이너 : 프로젝트 화면 -->
+  <div id="container02" class="container">
+    <div class="ArrowBox">
+      <div class="arrow"><i class="fas fa-arrow-down"></i></div>
+    </div>
+    <div class="operBox projectTitle">
+      <h2>PROJECT</h2>
+    </div>
+    <!-- 프로젝트 소개 화면 -->
+    <ul class="cardBox">
+      <li class="card">
+        <div class="cardImg">
+          <img src="./images/project01.png" alt="">
         </div>
-        <div class="operBox projectTitle"><h2>PROJECT</h2></div>
-        <!-- 프로젝트 소개 화면 -->
-        <ul class="cardBox">
-            <li class="card">
-                <div class="cardImg">
-                    <img src="./images/project01.png" alt="">
-                </div>
-                <div class="cardInform">
-                    <h2>TODO LIST</h2>
-                    <p>리액트를 사용한 ToDo List 프로그램</p>
-                    <a href="https://starlit-melba-ff19b4.netlify.app" target="_blank"><button>more</button></a>
-                </div>
-            </li>
-            <li class="card">
-                <div class="cardImg">
-                    <img src="./images/project02.png" alt="">
-                </div>
-                <div class="cardInform">
-                    <h2>TODO LIST</h2>
-                    <p>리액트를 사용한 ToDo List 프로그램</p>
-                    <a href="https://starlit-melba-ff19b4.netlify.app" target="_blank"><button>more</button></a>
-                </div>
-            </li>
-            <li class="card">
-                <div class="cardImg">
-                    <img src="./images/project03.png" alt="">
-                </div>
-                <div class="cardInform">
-                    <h2>TODO LIST</h2>
-                    <p>리액트를 사용한 ToDo List 프로그램</p>
-                    <a href="https://starlit-melba-ff19b4.netlify.app" target="_blank"><button>more</button></a>
-                </div>
-            </li>
-            <li class="card">
-                <div class="cardImg">
-                    <img src="./images/project04.png" alt="">
-                </div>
-                <div class="cardInform">
-                    <h2>TODO LIST</h2>
-                    <p>리액트를 사용한 ToDo List 프로그램</p>
-                    <a href="https://starlit-melba-ff19b4.netlify.app" target="_blank"><button>more</button></a>
-                </div>
-            </li>
-        </ul>
-
-    </div>
-
-    <!-- 3.컨테이너 : 자기소개 -->
-    <div id="container03" class="container">
-        <div class="operBox introTitle"><h2>ABOUT ME</h2></div>
-
-        <div class="main-slider">
-            <div class="item item-1">
-                <div class="inner-text">
-                    <p>안녕하세요 유하늘입니다.</p>
-                </div>
-            </div>
-            <div class="item item-2">
-                <div class="inner-text">
-        
-                </div>
-            </div>
-            <div class="item item-3">
-                <div class="inner-text">
-        
-                </div>
-            </div>
-            <div class="item item-4">
-                <div class="inner-text">
-        
-                </div>
-            </div>
-            <div class="item item-5">
-                <div class="inner-text">
-        
-                </div>
-            </div>
+        <div class="cardInform">
+          <h2>TODO LIST</h2>
+          <p>리액트를 사용한 ToDo List 프로그램</p>
+          <a href="https://starlit-melba-ff19b4.netlify.app" target="_blank"><button>more</button></a>
         </div>
+      </li>
+      <li class="card">
+        <div class="cardImg">
+          <img src="./images/project02.png" alt="">
+        </div>
+        <div class="cardInform">
+          <h2>TODO LIST</h2>
+          <p>리액트를 사용한 ToDo List 프로그램</p>
+          <a href="https://starlit-melba-ff19b4.netlify.app" target="_blank"><button>more</button></a>
+        </div>
+      </li>
+      <li class="card">
+        <div class="cardImg">
+          <img src="./images/project03.png" alt="">
+        </div>
+        <div class="cardInform">
+          <h2>TODO LIST</h2>
+          <p>리액트를 사용한 ToDo List 프로그램</p>
+          <a href="https://starlit-melba-ff19b4.netlify.app" target="_blank"><button>more</button></a>
+        </div>
+      </li>
+      <li class="card">
+        <div class="cardImg">
+          <img src="./images/project04.png" alt="">
+        </div>
+        <div class="cardInform">
+          <h2>TODO LIST</h2>
+          <p>리액트를 사용한 ToDo List 프로그램</p>
+          <a href="https://starlit-melba-ff19b4.netlify.app" target="_blank"><button>more</button></a>
+        </div>
+      </li>
+    </ul>
 
+  </div>
+
+  <!-- 3.컨테이너 : 자기소개 -->
+  <div id="container03" class="container">
+    <div class="operBox introTitle">
+      <h2>ABOUT ME</h2>
     </div>
 
-    <!-- 4.컨테이너 : 연락처 -->
-    <div id="container04" class="container">
-        <div class="operBox contectTitle"><h2>CONTECT</h2></div>
-
-        <a href="https://github.com/ryudv" target="_blank"><i class="fab fa-github" title="GitHub"></i></a>
-        <a href="https://blog.naver.com/ryu_dv" target="_blank" title="Blog"><i class="fab fa-blogger-b"></i></a>
-        <a href="https://www.instagram.com/ryu.skky/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        
-        <p>E-Mail: gksmfdkenl@gamil.com</p>
-        <p>Phone: 010-2638-7212</p>
-        <div class="mailBox">
-            <h3>Send mail</h3>
+    <div class="main-slider">
+      <div class="item item-1">
+        <div class="inner-text">
+          <p>안녕하세요 유하늘입니다.</p>
         </div>
+      </div>
+      <div class="item item-2">
+        <div class="inner-text">
+
+        </div>
+      </div>
+      <div class="item item-3">
+        <div class="inner-text">
+
+        </div>
+      </div>
+      <div class="item item-4">
+        <div class="inner-text">
+
+        </div>
+      </div>
+      <div class="item item-5">
+        <div class="inner-text">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 4.컨테이너 : 연락처 -->
+  <div id="container04" class="container">
+    <div class="operBox contectTitle">
+      <h2>CONTECT</h2>
+    </div>
+
+    <a href="https://github.com/ryudv" target="_blank"><i class="fab fa-github" title="GitHub"></i></a>
+    <a href="https://blog.naver.com/ryu_dv" target="_blank" title="Blog"><i class="fab fa-blogger-b"></i></a>
+    <a href="https://www.instagram.com/ryu.skky/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+
+    <p>E-Mail: gksmfdkenl@gamil.com</p>
+    <p>Phone: 010-2638-7212</p>
+    <div class="mailBox">
+
+      <!-- <script data-cfasync="false" type="text/javascript" src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script> -->
+      <div class="inner-title">
+        <h5 class="heading-5">Send Your Message</h5>
+      </div>
+      <form id="emailForm" class="gform" method="POST" data-email="clothes.yoo@gmail.com"
+        action="https://script.google.com/macros/s/AKfycbzIq9rbMsHpeQMmhzsVn2ZcFzHS0FLUGdp6XsaEayVPdn8Wq9QgL0QLTX3v-Vf2oqgN/exec">
+        <div class="form-row">
+          <div class="col-md-12">
+            <div class="form-row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="senderEmail" name="senderEmail" placeholder="Your Email"
+                    required>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="senderName" name="senderName" placeholder="Your Name"
+                    required>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <textarea class="form-control" id="message" name="message" rows="5"
+                    placeholder="Your Message"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group m-0">
+              <button id="btnSubmit" class="btn-submit mt-2">Send Message</button>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:none" class="thankyou_message">
+          <h2>화면에 뜨는 전송완료 메세지</h2>
+        </div>
+
+      </form>
+
+
     </div>
 
     <script src="./js/script.js">
 
     </script>
 </body>
+
 </html>

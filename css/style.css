@@ -7,6 +7,7 @@
     --yellow-color: #f0e68c;
     --deep-yellow-color: #ffd700;
     --black-color: #000000;
+    --line-color: #455a65;
 }
 
 * {
@@ -273,7 +274,7 @@ body::-webkit-scrollbar-track {
     top: 2px;
 }
 .upBtn button:hover {
-    background-color: var(--deep-yellow-color);
+    background-color: var(--yellow-color);
 }
 
 /* 컨테이너 타이틀 공통*/
@@ -356,14 +357,14 @@ body::-webkit-scrollbar-track {
 }
 #container02 .cardBox .card .cardInform button {
     border-radius: 25px;
-    border: 5px solid blue;
+    border: 5px solid var(--navy-color);
     width: 70px;
     height: 40px;
     font-weight: bold;
     font-size: 15px;
 }
 #container02 .cardBox .card .cardInform button:hover {
-    background-color: blue;
+    background-color: var(--navy-color);
     transition: 0.3s;
     color: white;
 }
@@ -457,21 +458,17 @@ body::-webkit-scrollbar-track {
     position: relative;
     top: 100vh;
     background-color: var(--gray-color);
+    color: var(--line-color);
 }
-#container04 .operBox {
-    animation: font-ani 2s infinite;
-}
-@keyframes font-ani {
-    0% {
-        transform: rotate(45%);
-    }
-    100% {
-        transform: rotate(-45%);
-    }
-}
-#container04 p{
-    color: black;
-}
+
 #container04 a{
     font-size: 50px;
+}
+.mailBox {
+    width: 600px;
+    height: 400px;
+    background-color: var(--deep-yellow-color);
+    border: 4px solid var(--navy-color);
+    border-radius: 20px;
+    color: var(--white-color);
 }
