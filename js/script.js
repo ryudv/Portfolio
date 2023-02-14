@@ -182,3 +182,5 @@ mainSlider.on('wheel', function(e) {
       }
     }
   })();
+
+

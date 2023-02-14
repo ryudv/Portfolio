@@ -7,7 +7,6 @@
     --yellow-color: #f0e68c;
     --deep-yellow-color: #ffd700;
     --black-color: #000000;
-    --line-color: #455a65;
 }
 
 * {
@@ -70,7 +69,7 @@ body::-webkit-scrollbar-track {
 /* 헤더 */
 #container01 .header {
     width: 100%;
-    height: 12vh;
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -143,7 +142,7 @@ body::-webkit-scrollbar-track {
 /* 메인화면 */
 #container01 .main {
     width: 100%;
-    height: 88vh;
+    height: 90vh;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -458,17 +457,73 @@ body::-webkit-scrollbar-track {
     position: relative;
     top: 100vh;
     background-color: var(--gray-color);
-    color: var(--line-color);
-}
-
-#container04 a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     font-size: 50px;
 }
-.mailBox {
-    width: 600px;
-    height: 400px;
-    background-color: var(--deep-yellow-color);
-    border: 4px solid var(--navy-color);
-    border-radius: 20px;
-    color: var(--white-color);
+#container04 .contectTitle {
+    height: 20%;
+}
+#container04 .contactArea {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+#container04 .contactBox {
+    width: 50%;
+    height: 90%;
+    box-shadow: 5px 15px 15px 15px darkgrey;
+}
+/* 공통 사항 */
+#container04 .contactBox .conBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#container04 .contactBox .snsBox {
+    height: 20%;
+}
+#container04 .contactBox .snsBox a {
+    font-size: 150%;
+}
+#container04 .contactBox .snsBox span {
+    font-size: 150%;
+}
+#container04 .contactBox .phoneBox{
+    height: 15%;
+}
+#container04 .contactBox .phoneBox .con1 span{
+    font-size: 200%;
+}
+#container04 .contactBox .phoneBox .con2 p {
+    font-size: 60%;
+}
+#container04 .contactBox .mailBox{
+    
+    height: 60%;
+}
+#container04 .contactBox .mailBox .con1 {
+
+}
+#container04 .contactBox .mailBox .con1 .gform {
+    font-size: 0%;
+}
+#container04 .contactBox .mailBox .con1 h5 {
+    font-size: 50%;
+}
+#container04 .contactBox .mailBox .con2 {
+
+}
+.form-control {
+    width: 400px;
+}
+textarea {
+    height: 200px;
+}
+#container04 .contactBox .mailBox .con2 span {
+    font-size: 150px;
 }
