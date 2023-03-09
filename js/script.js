@@ -57,7 +57,7 @@ var innerText = $('.inner-text');
 
 mainSlider.slick({
     slidesToShow: 1,
-    dots: true,
+    dots: false,
 });
 
 mainSlider.on('wheel', function(e) {

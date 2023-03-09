@@ -1,6 +1,7 @@
 :root {
     /* color */
     --white-color: #fffafa;
+    --light-gray-color: #e5e1e1;
     --gray-color: #d3d3d3;
     --deep-gray-color: #c0c0c0;
     --navy-color: #191970;
@@ -100,7 +101,7 @@ body::-webkit-scrollbar-track {
 #container01 .header .title .logoText h1 {
     font-size: 38px;
     display: inline;
-    background: linear-gradient(to right, rgba(255,255,255,0) 50% ,#ffd700 50%);
+    background: linear-gradient(to right, rgba(255,255,255,0) 50% ,var(--deep-yellow-color) 50%);
     background-size: 200%;
     transition: .2s;
     padding: 0 5px;
@@ -125,7 +126,7 @@ body::-webkit-scrollbar-track {
 #container01 .header .menuBtn ul li .desc {
     font-size: 25px;
     display: inline;
-    background: linear-gradient(to right, rgba(255,255,255,0) 50% ,#ffd700 50%);
+    background: linear-gradient(to right, rgba(255,255,255,0) 50% ,var(--deep-yellow-color) 50%);
     background-size: 200%;
     transition: .3s;
     padding: 0 5px;
@@ -375,7 +376,6 @@ body::-webkit-scrollbar-track {
 /* 컨테이너03 : 자기소개 */
 #container03 {
     width: 100%;
-    height: 150vh;
     position: relative;
     top: 100vh;
     background-color: var(--gray-color);
@@ -383,9 +383,54 @@ body::-webkit-scrollbar-track {
 #container03 .introTitle {
     margin-bottom: 50px;
 }
+.introBox1 {
+    width: 100vw;
+    height: 50vh;
+}
+#container03 .introBox2 {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(2, 50%);
+    grid-template-columns: repeat(2, 50%);
+}
+#container03 .introBox2 .introItem {
+    transition: .3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    perspective: 1100px;
+}
+#container03 .introBox2 .introItem:hover {
+    font-size: 30px;
+}
+#container03 .introBox2 .introItem:not(:hover) {
+    transition: .5s;
+}
+#container03 .introBox2 .item1:hover {
+    background-color: var(--deep-yellow-color);
+    color: var(--navy-color);
+}
+#container03 .introBox2 .item2:hover {
+    background-color: var(--navy-color);
+    color: var(--yellow-color);
+}
+#container03 .introBox2 .item3:hover {
+    background-color: var(--deep-gray-color);
+    color: var(--deep-yellow-color);
+}
+#container03 .introBox2 .item4:hover {
+    background-color: var(--yellow-color);
+    color: var(--black-color);
+}
+
+
+
+
 .main-slider {
     position:relative;
-    width:50%;
+    width:100%;
     height:30%;
 }
 .main-slider .slick-list, .main-slider .slick-track {
@@ -461,7 +506,6 @@ body::-webkit-scrollbar-track {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 50px;
 }
 #container04 .contectTitle {
     height: 20%;
@@ -470,13 +514,14 @@ body::-webkit-scrollbar-track {
     height: 80%;
     width: 100%;
     display: flex;
-    align-items: start;
     justify-content: center;
 }
 #container04 .contactBox {
-    width: 50%;
-    height: 90%;
+    width: 650px;
+    height: 550px;
     box-shadow: 5px 15px 15px 15px darkgrey;
+    padding: 20px;
+    background-color: var(--light-gray-color);
 }
 /* 공통 사항 */
 #container04 .contactBox .conBox {
@@ -485,45 +530,67 @@ body::-webkit-scrollbar-track {
     justify-content: space-around;
 }
 #container04 .contactBox .snsBox {
-    height: 20%;
+    height: 15%;
+    font-size: 50px;
+    transition: .3s;
 }
-#container04 .contactBox .snsBox a {
-    font-size: 150%;
+.arrowBtn {
+    transition: .3s;
 }
-#container04 .contactBox .snsBox span {
-    font-size: 150%;
+.arrowBtn:hover {
+    color: var(--navy-color);
+}
+.snsBtn {
+    transition: .3s;
+}
+.snsBtn:hover {
+    transform: rotate(20deg);
+    color: var(--navy-color);
+}
+.emojiBtn {
+    transition: .3s;
+}
+.emojiBtn:hover {
+    margin-bottom: 15px;
 }
 #container04 .contactBox .phoneBox{
     height: 15%;
+    font-size: 25px;
 }
-#container04 .contactBox .phoneBox .con1 span{
-    font-size: 200%;
+#container04 .contactBox .phoneBox .con1 {
+    font-size: 50px;
+    transition: .3s;
 }
+#container04 .contactBox .phoneBox .con1:hover {
+    margin-bottom: 15px;
+}
+
 #container04 .contactBox .phoneBox .con2 p {
-    font-size: 60%;
+    display: inline;
+    background: linear-gradient(to right, rgba(255,255,255,0) 50% ,#ffd700 50%);
+    background-size: 200%;
+    transition: .2s;
+padding: 0 5px;
+}
+#container04 .contactBox .phoneBox .con2 p:hover {
+    color: var(--navy-color);
+    transition: 0.5s ease-out;
+    background-position: -100% 0;
+
+}
+#container04 .contactBox .phoneBox .con2 p:not(:hover) {
+    transition: 0.5s ease-out;
 }
 #container04 .contactBox .mailBox{
-    
-    height: 60%;
+    height: 70%;
+    font-size: 20px;
 }
-#container04 .contactBox .mailBox .con1 {
-
-}
-#container04 .contactBox .mailBox .con1 .gform {
-    font-size: 0%;
-}
-#container04 .contactBox .mailBox .con1 h5 {
-    font-size: 50%;
-}
-#container04 .contactBox .mailBox .con2 {
-
+#container04 .contactBox .mailBox .con2 img {
+    width: 150px;
 }
 .form-control {
     width: 400px;
 }
 textarea {
     height: 200px;
-}
-#container04 .contactBox .mailBox .con2 span {
-    font-size: 150px;
 }
